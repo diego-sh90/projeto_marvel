@@ -18,14 +18,17 @@ export class ServiceService {
     let ts =" ";
 
     return new Promise((ret) => {
-      this.http.get(this.host + url + '?ts=' + ts + '&hash' + this.getHash(ts) + parameters).subscribe((response) => {
+      this.getKeys().then(_ =>{
+        this.http.get(this.host + url + '?ts=' + ts + '&hash' + this.getHash(ts) + parameters).subscribe((response) => {
     
-        if(response){
-          ret(response);
-        }else{
-          ret(false);
-        }
+          if(response){
+            ret(response);
+          }else{
+            ret(false);
+          }
+        })
       })
+      
     })
 
 
@@ -49,4 +52,5 @@ export class ServiceService {
       })
     })
   }
+
 }

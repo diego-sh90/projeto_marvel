@@ -27,6 +27,10 @@ export class CharacterService {
     pagination: PaginationComponent, filter: String){
       let strFilter = '';
 
+      if(filter){
+        strFilter = '&nameStartsWith=' + filter;
+      }
+
       let param = '&limit=' + pagination.getLimit() 
       + 'offset=' + pagination.getOffset() + strFilter;
        
