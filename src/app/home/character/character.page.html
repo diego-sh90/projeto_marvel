@@ -1,5 +1,76 @@
 <ion-header class="header-marvel">
+  <ion-row class="ion-align-items-center padding-4">
+    <ion-col size="2" size-md="1">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-col>
+    <ion-col size="7" size-md="10" class="info-test ion-text-left">
+      Histórico <span class="name-test"> transmição </span>
+    </ion-col>
+    <ion-col size="3" size-md="1" class="ion-text-right">
+      <span class="icon-account"> Marvel </span>
+    </ion-col>
+  </ion-row>
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-col size="12" class="content-page">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12" size-md="2">
+          <img *ngIf="character.thumbnail && character.thumbnail.path" 
+          [src]="character.thumbnail.path + '.' + character.thumbnail.extension" 
+          [alt]="character.name" 
+          class="character-img">
+        </ion-col>
+        <ion-col size="12" size-md="10">
+          <ion-row class="page-title"> 
+            <ion-col size="12">
+              {{ character.name }}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12" class="ion-text-md-left">
+              <span class="character-info" *ngFor="let serie of character.series.items;let ix = index">
+                <span>
+                  {{serie.name}}
+                  <span *ngIf="ix != character.series.items.length - 1">,&nbsp;</span>
+                </span>
+              </span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+          
+      <ion-row>
+        <ion-col size="12" class="page-subtitle">
+          Recomendados
+          <hr>
+        </ion-col>
+      </ion-row>
+    
+      <ion-row [hidden]="checking">
+        <ion-col size="12">
+          <ion-row *ngFor="let comic of comics" class="ion-align-items-center comics">
+            <ion-col size="12" size-md="1" class="ion-text-center">
+              <img *ngIf="comic.thumbnail && comic.thumbnail.path" 
+              [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" 
+              [alt]="comic.title" class="comic-img">
+            </ion-col>
+            <ion-col size="12" size-md="11" class=" ion-text-center ion-text-md-left">
+              <span class="comic-name">{{ comic.title }}</span> <br>
+              <span class="comic-description">
+                {{comic.description}}
+              </span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    
+      <ion-row [hidden]="!checking">
+        <ion-col size="12">
+          <app-loading></app-loading>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
 </ion-content>

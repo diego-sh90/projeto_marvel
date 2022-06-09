@@ -1,33 +1,33 @@
 .icon-back{
-  font-size: 10px;
+  font-size: 05px;
 }
 
 .character-img{
   width: 100%;
   border-radius: 4px;
 }
-
+//titulo da pagina
 .page-title {
   text-align: center;
-  color: var(--dark-smoke);
-  font-size: 1.6rem;
+  color: var(--vermelho);
+  font-size: 2rem;
 }
-
+//
 .character-info{
-  color: var(--dark-smoke);
-  font-size: 1rem;
+  color: var(--vermelhor);
+  font-size: 2rem;
   text-align: center;
 }
 
 .page-subtitle{
-  color: var(--dark-smoke);
+  color: var(--dark);
   font-size: 1.3rem;
   text-align: center;
   margin-top: 20px;
 }
 
 .comics{
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .comic-img{
@@ -36,20 +36,20 @@
 }
 
 .comic-name{
-    color: var(--dark-smoke);
-    font-size: 1.3rem;
+    color: var(--dark);
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 .comic-description{
-  color: var(--dark-smoke);
-  font-size: 1.0rem;
+  color: var(--dark);
+  font-size: 1.1rem;
 }
 
 @media(min-width: 768px){
   .page-title {
     text-align: left;
-    color: var(--dark-smoke);
+    color: var(--dark);
     font-size: 1.6rem;
   }
   

@@ -1,4 +1,4 @@
-/* cabeçalho e input de busca */
+
 .fixed-info{
   position: sticky;
   top: 0;
@@ -36,9 +36,7 @@
   z-index: 1000;
   color: var(--dark-smoke);
 }
-/* ----- * ----- */
 
-/* listagem dos personagens */
 
 .title-list{
   color: var(--dark-smoke);
@@ -56,9 +54,7 @@
   box-shadow: 0px 0px 3px var(--dark);
 }
 
-/* ----- * ----- */
 
-/* item personagem */
 .character-img{
   height: 48px;
   width: 48px;
@@ -74,9 +70,7 @@
   color: var(--dark-smoke);
   font-size: 1rem;
 }
-/* ----- * ----- */
 
-/* ----- paginação ----- */
 .go-page{
   margin: 0 8px;
   padding: 5px 10px;
@@ -107,7 +101,7 @@
   cursor: pointer;
 }
 
-/* ----- * ----- */
+
 
 @media(min-width: 768px){
   .frame-list{
